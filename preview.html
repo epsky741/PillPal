@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>PillPal</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f7f3;
+      color: #183d2a;
+    }
+
+    header {
+      background: #16864b;
+      color: white;
+      padding: 25px 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      font-weight: normal;
+      margin-top: 5px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    .description {
+      color: #66806f;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px #0000000d;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin: 8px 0;
+    }
+
+    .value {
+      font-size: 27px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .icon {
+      font-size: 25px;
+    }
+
+    .time-card {
+      margin-top: 15px;
+    }
+
+    .emergency {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .call-button {
+      width: 100%;
+      padding: 16px;
+      background: #d92d35;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .note {
+      text-align: center;
+      color: #66806f;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    PillPal
+    <div class="subtitle">
+      Your personal medicine companion
+    </div>
+  </header>
+
+  <div class="container">
+
+    <h2>Welcome!</h2>
+    <p class="description">
+      Your dispenser environment and status
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Temperature</h3>
+        <div class="value">25 degrees C</div>
+      </div>
+
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Humidity</h3>
+        <div class="value">45%</div>
+      </div>
+
+    </div>
+
+    <div class="card time-card">
+      <div class="icon"></div>
+      <h3>Current Time</h3>
+      <div class="value" id="clock">--:--:--</div>
+    </div>
+
+    <div class="emergency">
+      <h3>Emergency Assistance</h3>
+
+      <p class="description">
+        Need help? Press the button below.
+      </p>
+
+      <button class="call-button"
+        onclick="emergencyAlert()">
+        EMERGENCY CALL
+      </button>
+
+      <p class="note">
+        Demo only no actual call is placed.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function updateClock() {
+      document.getElementById("clock")
+        .textContent =
+        new Date().toLocaleTimeString();
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    }
+  </script>
+
+</body>
+</html>
